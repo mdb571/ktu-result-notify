@@ -9,11 +9,11 @@ import time
 
 load_dotenv()
 
-driver_path = '/usr/bin/chromedriver'
 
-brave_path = '/usr/bin/brave-browser'
 
-download_path="/home/rmb571/Documents/ktu-result/results"
+
+
+download_path="/home/runner/ktu-result-notify/results"
 option = webdriver.ChromeOptions()
 option.headless = True
 option.add_argument('--no-sandbox')
@@ -26,11 +26,11 @@ option.add_experimental_option("prefs", {
   "download.directory_upgrade": True,
   "safebrowsing.enabled": True
     })
-option.binary_location = brave_path
+
 
 def fetch_grade_card(username,password,sem):
 
-    browser = webdriver.Chrome(executable_path=driver_path, options=option)
+    browser = webdriver.Chrome(options=option)
 
     browser.get('https://app.ktu.edu.in/login.jsp')
 
