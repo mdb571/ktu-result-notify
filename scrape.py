@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import Select
 import os 
 import time
 
-download_path="/home/pi/Desktop/ktu-result-notify/results"
+download_path=os.environ.get('DOWNLOAD')
 option = webdriver.ChromeOptions()
 option.headless = True
 option.add_argument('--no-sandbox')
