@@ -7,7 +7,8 @@ __pycache__/
 *.so
 
 record.log/
-
+log.txt
+error.txt
 test.py
 # Distribution / packaging
 .Python
