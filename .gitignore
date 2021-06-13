@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+record.log/
+
 test.py
 # Distribution / packaging
 .Python

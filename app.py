@@ -1,16 +1,17 @@
 from flask import Flask, request ,send_from_directory
 from twilio.rest import Client
 from twilio import twiml
-from dotenv import load_dotenv
 import os
 from bs4 import BeautifulSoup
 import requests
 from deta import Deta
 from scrape import fetch_grade_card
 from notify import send_notification
-load_dotenv()
+
+
 
 app=Flask(__name__,static_folder="results")
+
 
 deta_key=os.environ.get('DETA_KEY')
 ktu_id=os.environ.get('KTU_ID')
@@ -20,7 +21,7 @@ db = deta.Base("users")
 
 sem=os.environ.get("SEM")
 
-result_checkers=['Result','MBA',sem]   
+result_checkers=['Result','B.Tech',sem]   
 
 print(result_checkers)   
 
@@ -48,7 +49,7 @@ def check_notif():
         if all(x in notif.text for x in result_checkers):
             if db.get(ktu_id)['fetched']==False:
 
-                result=fetch_grade_card(ktu_id,ktu_pass,'S4')
+                result=fetch_grade_card(ktu_id,ktu_pass,sem)
                 db.update({'fetched':True},ktu_id)
                 send_notification()
                 return("Result Fetched")

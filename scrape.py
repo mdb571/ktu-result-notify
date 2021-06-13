@@ -13,7 +13,7 @@ load_dotenv()
 
 
 
-download_path="/home/runner/ktu-result-notify/results"
+download_path="/home/pi/Desktop/ktu-result-notify/results"
 option = webdriver.ChromeOptions()
 option.headless = True
 option.add_argument('--no-sandbox')

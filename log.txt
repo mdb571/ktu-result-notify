@@ -1,0 +1,5 @@
+PING 192.168.1.4:5000 (/check):
+connected to 192.168.1.4:5000 (157 bytes), seq=0 time=1942.60 ms 
+--- http://192.168.1.4:5000/check ping statistics ---
+1 connects, 1 ok, 0.00% failed, time 2943ms
+round-trip min/avg/max = 1942.6/1942.6/1942.6 ms
