@@ -7,9 +7,11 @@ __pycache__/
 *.so
 
 record.log/
-log.txt
-error.txt
+log.txt/
+error.txt/
 test.py
+test.json
+*.json.lock
 # Distribution / packaging
 .Python
 build/

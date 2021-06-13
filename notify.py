@@ -1,9 +1,7 @@
 from twilio.rest import Client
 from twilio import twiml
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
 ACCOUNT_SID =os.environ['ACCOUNT_SID']
 AUTH_TOKEN = os.environ['AUTH_TOKEN']

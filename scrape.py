@@ -2,16 +2,7 @@ from  selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import Select
 import os 
-from dotenv import load_dotenv
 import time
-
-
-
-load_dotenv()
-
-
-
-
 
 download_path="/home/pi/Desktop/ktu-result-notify/results"
 option = webdriver.ChromeOptions()

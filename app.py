@@ -4,24 +4,25 @@ from twilio import twiml
 import os
 from bs4 import BeautifulSoup
 import requests
-from deta import Deta
 from scrape import fetch_grade_card
 from notify import send_notification
 
+from pysondb import db
 
 
 app=Flask(__name__,static_folder="results")
 
+condition=db.getDb("test.json")
 
-deta_key=os.environ.get('DETA_KEY')
+
 ktu_id=os.environ.get('KTU_ID')
 ktu_pass=os.environ.get('KTU_PASS')
-deta = Deta(deta_key)
-db = deta.Base("users")
 
 sem=os.environ.get("SEM")
 
-result_checkers=['Result','B.Tech',sem]   
+#result_checkers=['Result','B.Tech',sem]   
+#tests
+result_checkers=['Result','MBA','T4']   
 
 print(result_checkers)   
 
@@ -47,10 +48,10 @@ def check_notif():
     for notif in announcmnt.find_all('li'):
 
         if all(x in notif.text for x in result_checkers):
-            if db.get(ktu_id)['fetched']==False:
+            if condition.get()[0]['fetched']==False:
 
-                result=fetch_grade_card(ktu_id,ktu_pass,sem)
-                db.update({'fetched':True},ktu_id)
+                result=fetch_grade_card(ktu_id,ktu_pass,'S4')
+                condition.update({"fetched":False},{"fetched":True})
                 send_notification()
                 return("Result Fetched")
             
