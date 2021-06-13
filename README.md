@@ -43,6 +43,9 @@ Run the server and and setup a cron job that constantly pings the `/check` endpo
 ##### Windows
 Run the server and use [Windows Task Scheduler](https://www.windowscentral.com/how-create-and-run-batch-file-windows-10) to run the [ping.bat](https://github.com/mdb571/ktu-result-notify/blob/main/ping.bat) at regular intervals
 
+### Screenshot
+<img src="./assets/output.jpeg" alt="screenshot" height="300" width="450">
+
 ### Contribution
 Feel free to open a PR if you can improve this project. :)
 
